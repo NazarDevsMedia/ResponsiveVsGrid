@@ -1,0 +1,92 @@
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Create four equal columns that floats next to each other */
+        .column {
+            float: left;
+            width: 25%;
+            padding: 10px 10px 10px 150px;
+            height: 400px;
+            background-position-x: 15px;
+            background-position-y: 30px;
+            background-repeat: no-repeat;
+            background-size: 100px;
+        }
+
+        #column1{
+            background-color: #00ff7f;
+            background-image: url("camera.png")
+        }
+        #column2{
+            background-color: #fa8072;
+            background-image: url("camera.png")
+        }
+        #column3{
+            background-color: #800080;
+            background-image: url("camera.png")
+        }
+        #column4{
+            background-color: #cd853f;
+            background-image: url("camera.png")
+        }
+        
+        /* Clear floats after the columns */
+        .row:after {
+            /* height: 200px; */
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        /* Setting up grid table */
+        .grid-container {
+            display: grid;
+            grid-template-columns: auto auto auto auto;
+            grid-gap: 0px;
+        }
+        .grid-container > div {
+            text-align: left;
+            padding: 10px 10px 10px 150px;
+            font-size: 1rem;
+            background-position-x: 15px;
+            background-position-y: 30px;
+            background-repeat: no-repeat;
+            background-size: 100px;
+        }
+        .item1{
+            background-image: url("camera.png");
+            background-color: #00ff7f;
+        }
+        .item2{
+            background-image: url("camera.png");
+            background-color: #fa8072;
+        }
+        .item3{
+            background-image: url("camera.png");
+            background-color: #800080;
+        }
+        .item4{
+            background-image: url("camera.png");
+            background-color: #cd853f;
+        }
+        
+        /* Responsive layout - makes the four columns stack on top of each other instead of next to each other */
+        @media screen and (max-width: 1060px) {
+            .column {
+                width: 50%;
+                height: 220px;
+            }
+            .grid-container {
+                grid-template-columns: auto auto;
+            }
+        }
+        @media screen and (max-width: 600px) {
+            .column {
+                width: 100%;
+                height: auto;
+            }
+            .grid-container {
+                grid-template-columns: auto;
+        }
+        }
